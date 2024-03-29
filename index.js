@@ -11,15 +11,9 @@ function saturdayFun(activity = 'roller-skate') {
   };
   
   // Function expression for wrapAdjective
-
-  const wrapAdjective = (char) => {
-    if (typeof char !== 'string' || char.length !== 1) {
-      throw new Error('char must be a string with length 1');
-    }
-  
-    return (adj) => char + adj + char;
+function wrapAdjective(highlight = "*"){
+  return function(emphatic = "special"){
+   return `You are ${highlight}${emphatic}${highlight}!`;
   };
-  
-  const highlightWithAsterisks = wrapAdjective('*');
-  const highlightWithPipes = wrapAdjective('||');
-  
+};
+
